@@ -1,0 +1,35 @@
+# ============================================================================
+#  Affectation des broches - DE0-Nano (le composant se choisit a la main dans Assignments > Device)
+#  Quartus : Assignments > Import Assignments... > choisir ce fichier
+# ============================================================================
+
+set_location_assignment PIN_R8  -to CLOCK_50
+set_location_assignment PIN_J15 -to KEY[0]
+set_location_assignment PIN_E1  -to KEY[1]
+
+set_location_assignment PIN_A15 -to LED[0]
+set_location_assignment PIN_A13 -to LED[1]
+set_location_assignment PIN_B13 -to LED[2]
+set_location_assignment PIN_A11 -to LED[3]
+set_location_assignment PIN_D1  -to LED[4]
+set_location_assignment PIN_F3  -to LED[5]
+set_location_assignment PIN_B1  -to LED[6]
+set_location_assignment PIN_L3  -to LED[7]
+
+# Accelerometre ADXL345 (SPI 3 fils)
+set_location_assignment PIN_G5  -to G_SENSOR_CS_N
+set_location_assignment PIN_M2  -to G_SENSOR_INT
+set_location_assignment PIN_F2  -to I2C_SCLK
+set_location_assignment PIN_F1  -to I2C_SDAT
+
+# Sortie UART vers l'ESP32 : GPIO_00 = JP1 broche 2
+set_location_assignment PIN_D3  -to UART_TX
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_INT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SDAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_TX
